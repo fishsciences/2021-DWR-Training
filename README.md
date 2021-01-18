@@ -15,7 +15,7 @@ install.packages(c('rmarkdown',
                  )
  ```
  
-Function to copy to `utils.R` file in the practice report:
+Function to copy to `utils.R` file during the exercises in the practice report:
 
 ```
 condition = function(weights, lengths) {
