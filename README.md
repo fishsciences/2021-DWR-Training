@@ -1,4 +1,4 @@
-# 2021-DWR-Training
+# 2021 DWR Yolo Bypass Telemetry Training
 
 Packages to install in order to follow along with the training:
 
