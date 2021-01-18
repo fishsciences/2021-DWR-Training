@@ -1,0 +1,87 @@
+---
+title: "Session 1 Lesson Plan"
+author: "Myfanwy Johnston"
+date: "January 20, 2021"
+output: 
+  html_document:
+    theme: lumen
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background
+
+Our ultimate goal here is that by the end of the _second_ training session, you will understand how to make the reproducible report,  and how to update it with new data in accordance with best practices for reproducible workflows.
+
+So, in this first training session, we will be making a practice reproducible report called “Cod Report”.  “Cod Report” will consist of two different .Rmd documents.  Its setup and organization will follow best practices for reproducibility, using a project-oriented workflow.  The first three exercises below (I-III) are designed to mirror the process of creating a more complicated reproducible report from start to finish. The last exercise sets us up for the second training session.
+
+## Exercise 1
+
+Set up a local project directory in accordance with best practices for project-oriented workflow
+
+1. Create project folder “codfish” somewhere on your hard drive.  
+    - This is your project directory.
+2. Within the project directory, create project subfolders: 
+    - /R, /data_raw, /data_clean, /docs
+3. Move or copy “CodParasite.csv” into the /data_raw subfolder
+4. Open RStudio, select “New Project” and using the “Existing Directory” option, navigate to your codfish project folder
+5. Create a new R script and save it as “utils.R” to the codfish project’s R subfolder
+    - Save some basic functions to utils.R, including the function “condition” that we wrote in the R course.
+    - You can find the code for a condition function [here](https://gist.github.com/Myfanwy/2445f0972f0f6a65d75a0750fdecf779)
+6. Create another R script called “clean_codparasite.R”.  In it:
+    - read CodParasite.csv into R
+    - source “utils.R”
+    - perform basic cleaning operations on the data
+    - remove NAs in columns of interest
+    - add a new column for fish condition
+    - subset down to the columns we want
+    - save final object “codparasite_clean.rds” to /data_clean/
+    - Comment at the top that the output is “data_clean/codparasite_clean.rds”
+
+
+----- Rmd Introductory slides -----
+
+
+## Exercise 2
+
+Create a functioning (knits without error) .Rmd document/report
+
+
+1. In your codfish project, create a new Q1_tables.Rmd and save it to /docs
+2. In the setup chunk, load “codparasite_clean.rds” and comment on where it was created
+3. Create two more chunks, one for table 1 and one table 2.  
+    - Create the tables using knitr::kable().
+    - Set your knit directory to project folder
+4. Knit the .Rmd to Word.
+5. Create a new Q2_plots.Rmd, similar to Q1_tables but with plots instead of tables, and save it to /docs.
+    - make sure the setup chunk is named something different than what it’s named in the Q1 Rmd
+6. Create a new CodReport.Rmd
+7. Outline the two sections in markdown
+8. Beneath each section, insert a named code chunk and use the child= argument to name the other Rmds that will be sourced there
+9. Click “knit”
+
+
+## Exercise 3
+
+Install CDECRetrieve, fishpals, and tagtales packages from GitHub in preparation for next week.
+
+1. Install the `remotes` package:
+
+```{r, eval=FALSE, echo=TRUE}
+install.packages("remotes")
+```
+
+2. Install each subsequent package using `remotes::install_github()`
+    - If you get a message about updating packages, enter 1 into the console to update all
+
+```{r, eval=FALSE, echo=TRUE}
+remotes::install_github("flowwest/CDECRetrieve")
+remotes::install_github("fishsciences/fishpals")
+remotes::install_github("Myfanwy/tagtales")
+```
+

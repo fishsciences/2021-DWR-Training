@@ -1,0 +1,24 @@
+---
+title: "Cod Final Report"
+author: "Myfanwy Johnston"
+date: "1/17/2021"
+output: word_document
+---
+
+```{r setupfinal, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Research Questions: Cod
+
+## Q1 - Cod Tables
+
+```{r q1, child = "Q1_tables.Rmd"}
+```
+
+## Q2 - Cod Plots
+
+```{r q2, child= "Q2_plots.Rmd"}
+
+```
+

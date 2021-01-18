@@ -1,0 +1,40 @@
+---
+title: "Cod Tables"
+author: "Myfanwy Johnston"
+date: "1/17/2021"
+output: word_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup_tables, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+d = readRDS("output/codparasite_clean.rds")
+```
+
+Table 1. Number of parasite observations by year
+
+```{r}
+
+t1 = data.frame(table(d$Year))
+colnames(t1) = c("Year", "Number of Observations")
+knitr::kable(t1)
+
+```
+
+Table 2. What is the average condition by age of cod?       
+
+```{r}
+
+t2 = data.frame(`Average Condition` = tapply(d$K, d$Age, mean, simplify = FALSE),
+                `Standard Deviation` = tapply(d$K, d$Age, sd, simplify = FALSE),
+                check.names = FALSE)
+
+t2$Age = row.names(t2)
+
+row.names(t2) = NULL
+
+knitr::kable(t2[ , c("Age", "Average Condition", "Standard Deviation")], digits = 2)
+
+```
+
