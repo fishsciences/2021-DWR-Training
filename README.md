@@ -1,6 +1,27 @@
 # 2021 DWR Yolo Bypass Telemetry Training
 
-Packages to install in order to follow along with the training:
+
+## Session 2 (2021-01-27)
+
+To install the `ybt` package, please run:
+
+```
+
+remotes::install_github("fishsciences/ybt", build_vignettes = TRUE)
+
+```
+
+The QAQC script we will be working through can be found [here](https://github.com/fishsciences/YBT_Reports/blob/master/R/setup.R)
+
+
+
+
+
+
+
+## Session 1 (2021-01-20)
+
+Packages to install in order to follow along with the training Session 1:
 
 ```
 install.packages(c('rmarkdown', 
