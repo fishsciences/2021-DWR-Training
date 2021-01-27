@@ -20,6 +20,7 @@ Our ultimate goal here is that by the end of the _second_ training session, you 
 
 So, in this first training session, we will be making a practice reproducible report called “Cod Report”.  “Cod Report” will consist of two different .Rmd documents.  Its setup and organization will follow best practices for reproducibility, using a project-oriented workflow.  The first three exercises below (I-III) are designed to mirror the process of creating a more complicated reproducible report from start to finish. The last exercise sets us up for the second training session.
 
+
 ## Exercise 1
 
 Set up a local project directory in accordance with best practices for project-oriented workflow

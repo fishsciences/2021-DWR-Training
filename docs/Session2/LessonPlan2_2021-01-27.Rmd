@@ -1,0 +1,57 @@
+---
+title: "Session 2 Lesson Plan"
+author: "Myfanwy Johnston"
+date: "January 27, 2021"
+output: 
+  html_document:
+    theme: lumen
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background
+
+In our first training session, we made a practice reproducible report called “Cod Report”.  Its setup and organization followed best practices for reproducibility, using a project-oriented workflow.  In this session, we are going to build on those skills and learn some new ones, primarily about the QAQC-ing of the database.
+
+By the end of this training session, you will have worked through a QAQC script for raw data queried from the database, and the setup chunk for making the annual reproducible report.  
+
+# Prerequisites
+
+Everyone needs his or her own copy of the database somewhere on your hard drive (it should not be in a shared directory that someone else is accessing at the same time).  
+
+You need to have forked or downloaded your own copy of the [YBT_Reports repository](https://github.com/fishsciences/YBT_Reports).  In this repository there is a setup script; sourcing that will install the packages you'll need on your system for both the QAQC and knitting the reproducible report.
+
+
+# Lesson Plan
+
+First we'll go through the setup script from the Yolo Bypass 2019 Final Report repo.  This QAQCs the raw data queried from the SQLite database, and saves the RDS objects that both the reproducible report and the Final report use.
+
+Then we'll edit the parameters of the setup script for the reproducible report and knit it.  
+
+These two tasks will likely take the full two hours of the training session, but if we have any extra time, we can go through some of the analysis in the 2019 Final Report.
+
+## Exercise 1
+
+Follow along with the QAQC script using your own copy of the ybt SQLite database.
+
+1. Create a ybt-training project folder for this somewhere on your hard drive.  
+    - This is your project directory.
+2. Within the project directory, create project subfolders: 
+    - /R, /data_raw, /data_clean, /docs
+3. Move or copy "ybtdatabase.sqlite" into the data_raw/ subfolder
+4. Move or copy the utils.R script into the R/ subfolder
+5. Move or copy the setup.R script into the R/ subfolder
+6. Open RStudio, select “New Project” and using the “Existing Directory” option, navigate to your ybt-training project folder
+7. Work through the setup script with me
+
+## Exercise 2
+
+Edit the parameters of the Reproducible Report and knit it together for 2019
+
+
+
